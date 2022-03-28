@@ -7,7 +7,7 @@ const Detail = () => {
   const { id } = useParams();
   const [detail, setDetail] = useState([]);
   useEffect(() => {
-      Axios.get('http://localhost:3000/product/' + id).then((response) => {
+    Axios.get(`http://localhost:3000/product/${id}`).then((response) => {
         setDetail(response.data);
         // console.log(response.data)
       })
@@ -38,7 +38,7 @@ const Detail = () => {
           </tr>
           <tr>
             <td>Status</td>
-            <td>: {(item.status==true)?'Ada':'Tidak Ada'}</td>
+            <td>: {(item.status===true)?'Ada':'Tidak Ada'}</td>
           </tr>
           </tbody>
         )}
